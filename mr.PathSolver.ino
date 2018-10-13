@@ -1,8 +1,8 @@
-#define RMF 16
-#define RMB 5
+#define RMF A1
+#define RMB A0
 
-#define LMF 2
-#define LMB 13
+#define LMF A2
+#define LMB A3
 
 void mrPathSloverForward();
 void mrPathSolverBackward();
@@ -58,50 +58,50 @@ void loop() {
 
 void mrPathSolverBackward()
 {
-  //digitalWrite(RMF,HIGH);
-  digitalWrite(LMF,LOW);
-  digitalWrite(RMF,LOW);
+  //analogWrite(RMF,255);
+  analogWrite(LMF,0);
+  analogWrite(RMF,0);
   
-  //digitalWrite(RMB,LOW);
-  digitalWrite(LMB,HIGH);
-  digitalWrite(RMB,HIGH);
+  //analogWrite(RMB,0);
+  analogWrite(LMB,255);
+  analogWrite(RMB,255);
 }
 
 void mrPathSolverForward()
 {
-//  digitalWrite(RMF,LOW);
-    digitalWrite(LMF,HIGH);
-    digitalWrite(RMF,HIGH);
+//  analogWrite(RMF,0);
+    analogWrite(LMF,255);
+    analogWrite(RMF,255);
 
-//  digitalWrite(RMB,HIGH);
-    digitalWrite(LMB,LOW);
-    digitalWrite(RMB,LOW);
+//  analogWrite(RMB,255);
+    analogWrite(LMB,0);
+    analogWrite(RMB,0);
 }
 
 void mrPathSolverTurnRight()
 {
- digitalWrite(LMF,HIGH);
- digitalWrite(LMB,LOW);
+ analogWrite(LMF,255);
+ analogWrite(LMB,0);
 
- digitalWrite(RMF,LOW);
- digitalWrite(RMB,HIGH);
+ analogWrite(RMF,0);
+ analogWrite(RMB,255);
 }
 
 void mrPathSolverTurnLeft()
 {
-  digitalWrite(LMF,LOW);
-  digitalWrite(LMB,HIGH);
+  analogWrite(LMF,0);
+  analogWrite(LMB,255);
 
-  digitalWrite(RMF,HIGH);
-  digitalWrite(RMB,LOW);
+  analogWrite(RMF,255);
+  analogWrite(RMB,0);
 }
 
 void mrPathSolverStop()
 {
-  digitalWrite(RMF,LOW);
-  digitalWrite(LMF,LOW);
+  analogWrite(RMF,0);
+  analogWrite(LMF,0);
 
-  digitalWrite(RMB,LOW);
-  digitalWrite(LMB,LOW);
+  analogWrite(RMB,0);
+  analogWrite(LMB,0);
 }
 
